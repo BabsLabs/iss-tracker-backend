@@ -37,7 +37,7 @@ All tests are automatically run with [Travis CI](https://travis-ci.com/) after e
 - Sinatra
 
 ## Libraries
-- Faraday
+- [Faraday](https://lostisland.github.io/faraday/)
 
 ## Testing
 - Rspec

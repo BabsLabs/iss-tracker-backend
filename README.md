@@ -32,7 +32,7 @@ Use the command `rspec /spec/<path>/<to>/<individual>/<test>` to run a single te
 - Sinatra
 
 ## Libraries
-- Faraday
+- [Faraday](https://lostisland.github.io/faraday/)
 
 ## Testing
 - Rspec

@@ -3,6 +3,8 @@
 ## About
 The Babslabs ISS Tracker is an application built to track the location of the Internation Space Station across the world as it travels at speeds of over 7.660477 kilometers per second. The information for the ISS is updated every 3 seconds. Click on the ISS marker to display additional information about the ISS. This is the backend service that provides the API data for the Babslabs ISS Tracker app!
 
+[![Build Status](https://travis-ci.com/BabsLabs/iss-tracker-backend.svg?branch=master)](https://travis-ci.com/BabsLabs/iss-tracker-backend)
+
 ## Setup
 - Clone the repo git clone `https://github.com/BabsLabs/iss-tracker-backend.git`
 - Change into project directory

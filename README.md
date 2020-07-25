@@ -25,6 +25,9 @@ Use the command `rspec` to run all tests.
 ## Run single tests
 Use the command `rspec /spec/<path>/<to>/<individual>/<test>` to run a single test.
 
+## Travis-CI
+All tests are automatically run with [Travis CI](https://travis-ci.com/) after each pushed branch update.
+
 # Technologies
 
 ## Languages / Frameworks
@@ -36,6 +39,7 @@ Use the command `rspec /spec/<path>/<to>/<individual>/<test>` to run a single te
 
 ## Testing
 - Rspec
+- Travis-CI
 
 ## APIs
 This data in this project comes from the Where's the ISS at? and the NASA Open API Service.

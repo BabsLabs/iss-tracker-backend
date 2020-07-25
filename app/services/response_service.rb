@@ -3,7 +3,7 @@ class ResponseService
   def self.response
     data = Hash.new
     data[:data] = Hash.new
-    data[:data][:IssInfo] = iss_location
+    data[:data][:IssLocation] = iss_location
     return data
   end
   

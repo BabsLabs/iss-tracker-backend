@@ -5,6 +5,7 @@ gem 'sinatra'
 group :development, :test do
   gem 'rerun'
   gem 'pry'
+  gem 'rake'
 end
 
 group :test do

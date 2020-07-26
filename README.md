@@ -18,34 +18,45 @@ You can use the `rerun` gem to help reload your Sinatra project without having t
 - Use the command `rerun 'ruby app.rb'` to start the rerun server
 - Stop the rerun server with `control + c`
 
-# Testing
+## Testing
 Testing is done with the Rspec testing library.
 
-## Run all tests
+### Run all tests
 Use the command `rspec` to run all tests.
 
-## Run single tests
+### Run single tests
 Use the command `rspec /spec/<path>/<to>/<individual>/<test>` to run a single test.
 
-## Travis-CI
+### Travis-CI
 All tests are automatically run with [Travis CI](https://travis-ci.com/) after each pushed branch update.
 
-# Technologies
+## Endpoints
 
-## Languages / Frameworks
+### ISS Location
+The `/iss` endpoint provides the location information used for tracking the ISS. This information is provided by the [Where is the ISS at? API](https://wheretheiss.at/w/developer).
+
+### Events
+The `/events` endpoint provides the natural disaster data - or events - from the [Nasa Earth Observatory Natural Event Tracker API](https://eonet.sci.gsfc.nasa.gov/docs/v2.1).
+
+### Observatories
+The `/observatories` endpoint provides the location data for Nasa Ground Station Observatoreis which is provided by the [Nasa Satellite Situation Center API](https://sscweb.gsfc.nasa.gov/WebServices/REST/).
+
+## Technologies
+
+### Languages / Frameworks
 - Ruby
 - Sinatra
 
-## Libraries
+### Libraries
 - [Faraday](https://lostisland.github.io/faraday/)
 
-## Testing
+### Testing
 - Rspec
 - Travis-CI
 
-## APIs
+### APIs
 This data in this project comes from the Where's the ISS at? and the NASA Open API Service.
 
-# Requirements
+## Requirements
 - Ruby 2.7.1 or compatiable version
 - Sinatra 2.0.8.1

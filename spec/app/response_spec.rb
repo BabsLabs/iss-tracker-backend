@@ -11,10 +11,13 @@ describe '/response endpoint' do
     expect(response).to have_key :data
     expect(response[:data]).to have_key :IssLocation
     expect(response[:data][:IssLocation]).to be_a Hash
+
     expect(response[:data]).to have_key :NasaObservatories
     expect(response[:data][:NasaObservatories]).to be_an Array
-    
     expect(response[:data]).not_to have_key "GroundStation"
     expect(response[:data][:NasaObservatories][1]).not_to have_key "GroundStation"
+
+    expect(response[:data]).to have_key :NasaEvents
+    expect(response[:data][:NasaEvents]).to be_an Array
   end
 end

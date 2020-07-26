@@ -34,7 +34,7 @@ class ResponseService
     def self.nasa_event_locations
       all_events = NasaEventService.event_locations
       return all_events[:features].map do |event|
-        event if event[:geometry][:type].include?("Point")
+        event if event[:geometry] != nil
       end
     end
 

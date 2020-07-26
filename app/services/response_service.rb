@@ -1,11 +1,22 @@
 class ResponseService
-
-  def self.response
+  def self.iss_location_response
     data = Hash.new
     data[:data] = Hash.new
     data[:data][:IssLocation] = current_iss_location
-    data[:data][:NasaObservatories] = nasa_observatory_locations
+    return data
+  end
+  
+  def self.events_response
+    data = Hash.new
+    data[:data] = Hash.new
     data[:data][:NasaEvents] = nasa_event_locations
+    return data
+  end
+
+  def self.observatories_response
+    data = Hash.new
+    data[:data] = Hash.new
+    data[:data][:NasaObservatories] = nasa_observatory_locations
     return data
   end
 

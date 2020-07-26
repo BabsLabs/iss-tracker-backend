@@ -1,9 +1,21 @@
 class ResponseService
-
-  def self.response
+  def self.iss_location_response
     data = Hash.new
     data[:data] = Hash.new
     data[:data][:IssLocation] = current_iss_location
+    return data
+  end
+  
+  def self.events_response
+    data = Hash.new
+    data[:data] = Hash.new
+    data[:data][:NasaEvents] = nasa_event_locations
+    return data
+  end
+
+  def self.observatories_response
+    data = Hash.new
+    data[:data] = Hash.new
     data[:data][:NasaObservatories] = nasa_observatory_locations
     return data
   end
@@ -11,12 +23,19 @@ class ResponseService
   private
   
     def self.current_iss_location
-      response = IssService.iss_location
+      IssService.iss_location
     end
 
     def self.nasa_observatory_locations
-      response = NasaObservatoryService.observatory_locations
-      response[:GroundStation][1]
+      observatories = NasaObservatoryService.observatory_locations
+      observatories[:GroundStation][1]
+    end
+
+    def self.nasa_event_locations
+      all_events = NasaEventService.event_locations
+      return all_events[:features].map do |event|
+        event if event[:geometry][:type].include?("Point")
+      end
     end
 
 end

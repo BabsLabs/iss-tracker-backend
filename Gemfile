@@ -6,6 +6,7 @@ group :development, :test do
   gem 'rerun'
   gem 'pry'
   gem 'rake'
+  gem 'dotenv'
 end
 
 group :test do

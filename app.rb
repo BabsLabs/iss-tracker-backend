@@ -2,10 +2,6 @@ require 'sinatra'
 
 Dir["#{File.dirname(__FILE__)}/app/**/*.rb"].each { |f| load(f) }
 
-get '/' do
-  'Hello World!'
-end
-
 get '/iss' do
   response = ResponseService.iss_location_response
   response.to_json

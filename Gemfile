@@ -7,6 +7,7 @@ group :development, :test do
   gem 'rerun'
   gem 'pry'
   gem 'rake'
+  gem 'webmock'
 end
 
 group :test do

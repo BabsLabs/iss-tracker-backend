@@ -54,4 +54,11 @@ describe '/iss endpoint' do
     expect(last_response.status).to eq 401
     expect(last_response.body).to eq 'Unauthorized - request lacks valid authentication credentials'
   end
+
+  it 'returns a successful prefight request' do
+    options '/observatories', nil, {'HTTP_SUPER_SECRET_TOKEN' => ENV['SUPER_SECRET_TOKEN']}
+
+    expect(last_response).to be_ok
+    expect(last_response.status).to eq 200
+  end
 end

@@ -44,6 +44,7 @@ describe AuthorizationService do
         'Accept'=>'*/*',
         'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
         'Content-Length'=>'3',
+        'Http-Super-Secret-Token'=> 'bad token',
         'User-Agent'=>'Ruby'
         }).
       to_return(status: 200, body: "", headers: {})
@@ -51,6 +52,7 @@ describe AuthorizationService do
     uri = URI.parse("http://www.example.com/")
     req = Net::HTTP::Get.new(uri.path)
     req['Content-Length'] = 3
+    req['HTTP_SUPER_SECRET_TOKEN'] = 'bad token'
     Net::HTTP.start(uri.host, uri.port) {|http|
       http.request(req, "abc")
     }

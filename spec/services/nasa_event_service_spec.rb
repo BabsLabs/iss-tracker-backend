@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+WebMock.allow_net_connect! 
+
 describe NasaEventService do
   it 'fetches the location of Nasa Events from the Nasa API' do
     nasa_event_service = NasaEventService.new

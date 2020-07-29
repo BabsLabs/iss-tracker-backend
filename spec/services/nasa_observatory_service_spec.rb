@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+WebMock.allow_net_connect! 
+
 describe NasaObservatoryService do
   it 'fetches the location of Nasa Observatories from the Nasa API' do
     nasa_observatory_service = NasaObservatoryService.new

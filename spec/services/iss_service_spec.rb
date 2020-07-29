@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+WebMock.allow_net_connect!
+
 describe IssService do
   it 'fetches the ISS location from the wheretheiss API' do
     iss_service = IssService.new

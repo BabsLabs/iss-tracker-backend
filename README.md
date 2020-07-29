@@ -10,6 +10,12 @@ The Babslabs ISS Tracker is an application built to track the location of the In
 - Change into project directory
 - Install gems with `bundle install`
 
+## Environment Variables
+- This project is setup using the [dotenv gem](https://github.com/bkeepers/dotenv) to look for environment variables in a `.env` file in your root directory.
+
+### Required Variables
+- `SUPER_SECRET_TOKEN=<YOUR_SUPER_SECRET_TOKEN>`
+
 ### Starting Server
 - Start server with `ruby app.rb`
 
@@ -19,7 +25,7 @@ You can use the `rerun` gem to help reload your Sinatra project without having t
 - Stop the rerun server with `control + c`
 
 ## Testing
-Testing is done with the Rspec testing library.
+Testing is done with the Rspec testing library assisted by Webmock.
 
 ### Run all tests
 Use the command `rspec` to run all tests.
@@ -41,6 +47,9 @@ The `/events` endpoint provides the natural disaster data - or events - from the
 ### Observatories
 The `/observatories` endpoint provides the location data for Nasa Ground Station Observatoreis which is provided by the [Nasa Satellite Situation Center API](https://sscweb.gsfc.nasa.gov/WebServices/REST/).
 
+### Authorization Token
+All endpoints require an Authorization Token to access them. That token will be passed in as `SUPER_SECRET_TOKEN` in the request headers.
+
 ## Technologies
 
 ### Languages / Frameworks
@@ -53,6 +62,7 @@ The `/observatories` endpoint provides the location data for Nasa Ground Station
 ### Testing
 - Rspec
 - Travis-CI
+- Webmock
 
 ### APIs
 This data in this project comes from the Where's the ISS at? and the NASA Open API Service.

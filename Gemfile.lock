@@ -1,11 +1,17 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     coderay (1.1.3)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.13.1)
+    hashdiff (1.0.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -17,6 +23,7 @@ GEM
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    public_suffix (4.0.5)
     rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
@@ -43,17 +50,23 @@ GEM
     rspec-support (3.9.3)
     ruby2_keywords (0.0.2)
     ruby_dep (1.5.0)
+    safe_yaml (1.0.5)
     sinatra (2.0.8.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
       rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
     tilt (2.0.10)
+    webmock (3.8.3)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   faraday
   pry
   rack-test
@@ -61,6 +74,7 @@ DEPENDENCIES
   rerun
   rspec
   sinatra
+  webmock
 
 BUNDLED WITH
    2.1.4

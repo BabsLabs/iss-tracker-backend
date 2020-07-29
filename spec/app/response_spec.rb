@@ -40,16 +40,15 @@ describe '/iss endpoint' do
     expect(response[:data][:NasaObservatories][1]).not_to have_key "GroundStation"
   end
 
-  it 'returns a 401 error if no header is given' do
-    get '/iss'
+  it 'returns a 401 error if no secret token is given' do
+    get '/iss', nil, {'HTTP_SUPER_SECRET_TOKEN' => ''}
 
-    expect(last_response).not_to be_ok
     expect(last_response.status).to eq 401
     expect(last_response.body).to eq 'Unauthorized - request lacks valid authentication credentials'
   end
 
   it 'returns a 401 error if bad authorization header is given' do
-    get '/iss', nil, {'HTTP_SUPER_SECRET_TOKEN' => 'password'}
+    get '/iss', nil, {'HTTP_SUPER_SECRET_TOKEN' => 'bad token'}
 
     expect(last_response).not_to be_ok
     expect(last_response.status).to eq 401
